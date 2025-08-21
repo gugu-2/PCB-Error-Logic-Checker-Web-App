@@ -1,0 +1,38 @@
+{
+  "components": {
+    "U1": {
+      "value": "MCU"
+    },
+    "R1": {
+      "value": "10k"
+    }
+  },
+  "nets": {
+    "GND": [
+      {
+        "ref": "U1",
+        "pin": "GND"
+      },
+      {
+        "ref": "R1",
+        "pin": "2"
+      }
+    ],
+    "+3V3_GND": [
+      {
+        "ref": "U1",
+        "pin": "VDD"
+      },
+      {
+        "ref": "U1",
+        "pin": "GND"
+      }
+    ],
+    "LED_SIG": [
+      {
+        "ref": "U1",
+        "pin": "PA0"
+      }
+    ]
+  }
+}

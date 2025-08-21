@@ -1,5 +1,4 @@
 # PCB-Error-Logic-Checker-Web-App
-# PCB Error & Logic Checker — Web App
 
 A lightweight, web‑based tool to run automated checks on PCB design files. It performs basic DRC/ERC/logic sanity checks on uploaded Gerber and netlist files, surfaces issues in a table, and lets you download a JSON report.
 
@@ -91,3 +90,34 @@ Open [http://localhost:5173](http://localhost:5173) and upload files. The fronte
 ## 8) Disclaimer
 
 This is a minimal, educational starter. Always validate against your EDA’s built‑in DRC/ERC and your PCB fab’s design rules.
+
+
+
+
+# PCB Error & Logic Checker — Web App
+
+A lightweight, web-based tool to run automated checks on PCB design files (Gerbers, drills) and netlists. It performs basic DRC/ERC/logic sanity checks and outputs findings in a table or downloadable JSON.
+
+## Run
+
+### Backend
+```bash
+cd pcb-checker/backend
+python -m venv .venv && . .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn app:app --reload --host 0.0.0.0 --port 8000
+```
+
+### Frontend
+```bash
+cd pcb-checker/frontend
+npm install
+npm run dev
+```
+
+Open http://localhost:5173 and upload files. The frontend posts to http://localhost:8000/analyze.
+
+## Notes
+- This is a starter; real-world PCB checks require full parsers and geometry.
+- Extend rules in `backend/checks/*` and add config as needed.
+
